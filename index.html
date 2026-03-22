@@ -22,8 +22,15 @@
       --max:1240px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       font-family:Arial, Helvetica, sans-serif;
@@ -46,8 +53,15 @@
       }
     }
 
-    img{max-width:100%;display:block;}
-    a{color:inherit;text-decoration:none;}
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
     .container{
       width:min(92%, var(--max));
@@ -78,7 +92,9 @@
       white-space:nowrap;
     }
 
-    .logo span{color:var(--accent);}
+    .logo span{
+      color:var(--accent);
+    }
 
     .nav-links{
       display:flex;
@@ -94,7 +110,9 @@
       transition:.2s ease;
     }
 
-    .nav-links a:hover{color:var(--text);}
+    .nav-links a:hover{
+      color:var(--text);
+    }
 
     .btn{
       display:inline-flex;
@@ -114,16 +132,22 @@
       box-shadow:var(--shadow);
     }
 
-    .btn-primary:hover{transform:translateY(-2px);}
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
 
     .btn-secondary{
       background:transparent;
       border-color:rgba(255,255,255,.14);
     }
 
-    .btn-secondary:hover{background:rgba(255,255,255,.05);}
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.05);
+    }
 
-    .hero{padding:90px 0 72px;}
+    .hero{
+      padding:90px 0 72px;
+    }
 
     .hero-grid{
       display:grid;
@@ -189,18 +213,29 @@
       background:#0f1420;
     }
 
+    .hero-photo{
+      height:520px;
+    }
+
+    .photo-box{
+      height:420px;
+    }
+
     .hero-photo img,
     .photo-box img{
       width:100%;
       height:100%;
-      min-height:460px;
       object-fit:cover;
       object-position:center 20%;
     }
 
-    section{padding:72px 0;}
+    section{
+      padding:72px 0;
+    }
 
-    .section-head{margin-bottom:28px;}
+    .section-head{
+      margin-bottom:28px;
+    }
 
     .eyebrow{
       display:inline-block;
@@ -239,7 +274,9 @@
       box-shadow:var(--shadow);
     }
 
-    .card p + p{margin-top:14px;}
+    .card p + p{
+      margin-top:14px;
+    }
 
     .stats{
       display:grid;
@@ -361,8 +398,13 @@
       margin-top:34px;
     }
 
-    .athlete-layout.reverse .athlete-text{order:2;}
-    .athlete-layout.reverse .athlete-visual{order:1;}
+    .athlete-layout.reverse .athlete-text{
+      order:2;
+    }
+
+    .athlete-layout.reverse .athlete-visual{
+      order:1;
+    }
 
     .mini-gallery{
       display:grid;
@@ -370,8 +412,13 @@
       gap:14px;
     }
 
+    .mini-gallery .photo-box{
+      height:420px;
+    }
+
     .mini-gallery .photo-box img{
-      min-height:230px;
+      width:100%;
+      height:100%;
       object-fit:cover;
       object-position:center 20%;
     }
@@ -391,15 +438,21 @@
       gap:16px;
     }
 
+    .gallery-item{
+      height:280px;
+    }
+
     .gallery-item img{
       width:100%;
-      height:280px;
+      height:100%;
       object-fit:cover;
       object-position:center 20%;
       transition:transform .35s ease;
     }
 
-    .gallery-item:hover img{transform:scale(1.04);}
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
 
     .cta-box{
       background:linear-gradient(135deg, rgba(217,4,41,.16), rgba(255,183,3,.10));
@@ -438,10 +491,18 @@
         grid-template-columns:1fr;
       }
 
-      .quick-links{grid-template-columns:repeat(2,1fr);}
-      .gallery-grid{grid-template-columns:repeat(2,1fr);}
+      .quick-links{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
       .athlete-layout.reverse .athlete-text,
-      .athlete-layout.reverse .athlete-visual{order:initial;}
+      .athlete-layout.reverse .athlete-visual{
+        order:initial;
+      }
     }
 
     @media (max-width:760px){
@@ -451,8 +512,13 @@
         padding:14px 0;
       }
 
-      .nav-links{justify-content:center;}
-      .hero{padding-top:60px;}
+      .nav-links{
+        justify-content:center;
+      }
+
+      .hero{
+        padding-top:60px;
+      }
 
       .quick-links,
       .gallery-grid,
@@ -461,12 +527,18 @@
         grid-template-columns:1fr;
       }
 
-      .hero-photo img,
-      .photo-box img{
-        min-height:300px;
+      .hero-photo{
+        height:320px;
       }
 
-      .gallery-item img{height:240px;}
+      .photo-box,
+      .mini-gallery .photo-box{
+        height:320px;
+      }
+
+      .gallery-item{
+        height:240px;
+      }
     }
   </style>
 </head>
@@ -509,7 +581,7 @@
         </div>
 
         <div class="hero-photo">
-          <img src="images/sportivii-elita-2.jpeg" alt="Sportivii clubului CSM Box Dorohoi" />
+          <img src="images/sportivii-elita-2.jpeg" alt="Sportivii clubului CSM Box Dorohoi" width="1600" height="1000" />
         </div>
       </div>
     </section>
@@ -555,7 +627,7 @@
           </div>
 
           <div class="photo-box">
-            <img src="images/cretu-rares-marcu.jpeg" alt="Sportivi CSM Box Dorohoi" />
+            <img src="images/cretu-rares-marcu.jpeg" alt="Sportivi CSM Box Dorohoi" width="1200" height="900" />
           </div>
         </div>
       </div>
@@ -598,7 +670,7 @@
 
         <div class="coach-grid">
           <div class="photo-box">
-            <img src="images/antrenor-topala-valerian.jpeg" alt="Antrenor Topală Valerian" />
+            <img src="images/antrenor-topala-valerian.jpeg" alt="Antrenor Topală Valerian" width="900" height="1200" />
           </div>
 
           <div class="card coach-details">
@@ -643,18 +715,34 @@
           <div class="athlete-layout">
             <div class="athlete-text card">
               <h3>Alessio Grămescu</h3>
-              <p>Sportiv al clubului CSM Box Dorohoi, remarcat prin determinare, curaj și dorință de progres. Prezența sa în competiții și momentele spectaculoase din ring reflectă munca depusă la antrenamente și spiritul de luptător.</p>
-              <p>Alessio reprezintă foarte bine energia și ambiția noii generații de sportivi ai clubului, fiind un exemplu de implicare și evoluție constantă.</p>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, remarcat prin determinare, curaj și dorință
+                de progres. Prezența sa în competiții și momentele spectaculoase din ring reflectă
+                munca depusă la antrenamente și spiritul de luptător.
+              </p>
+              <p>
+                Alessio reprezintă foarte bine energia și ambiția noii generații de sportivi ai
+                clubului, fiind un exemplu de implicare și evoluție constantă.
+              </p>
               <div class="highlight">
-                Moment de competiție: în această secțiune este inclusă și imaginea cu faza spectaculoasă din ring, cea cu „Alessio Grămescu l-a doborât pe Moldoveanu Ciprian cu acest upercut”.
+                În această secțiune este inclusă și imaginea cu faza spectaculoasă din ring:
+                „Alessio Grămescu l-a doborât pe Moldoveanu Ciprian cu acest upercut”.
               </div>
             </div>
 
             <div class="athlete-visual mini-gallery">
-              <div class="photo-box"><img src="images/alessio-gramescu-albastru.jpeg" alt="Alessio Grămescu - competiție" /></div>
-              <div class="photo-box"><img src="images/alessio-gramescu-2.jpeg" alt="Alessio Grămescu - portret în sală" /></div>
-              <div class="photo-box"><img src="images/alessio-gramescu-uppercut.jpeg" alt="Alessio Grămescu - moment spectaculos în ring" /></div>
-              <div class="photo-box"><img src="images/alessio-gramescu-portret.jpeg" alt="Alessio Grămescu - imagine de prezentare" /></div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-albastru.jpeg" alt="Alessio Grămescu - competiție" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-2.jpeg" alt="Alessio Grămescu - portret în sală" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-uppercut.jpeg" alt="Alessio Grămescu - moment spectaculos în ring" width="1200" height="900" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-portret.jpeg" alt="Alessio Grămescu - imagine de prezentare" width="900" height="1200" />
+              </div>
             </div>
           </div>
         </div>
@@ -663,15 +751,30 @@
           <div class="athlete-layout reverse">
             <div class="athlete-text card">
               <h3>Crețu Cezar</h3>
-              <p>Sportiv al clubului CSM Box Dorohoi, implicat activ în pregătire și competiții. Prin seriozitate și perseverență, contribuie la imaginea unei generații tinere care crește frumos prin sport.</p>
-              <p>Prezența sa în cadrul grupului de sportivi ai clubului reflectă muncă, ambiție și dorință de afirmare în box.</p>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, implicat activ în pregătire și competiții.
+                Prin seriozitate și perseverență, contribuie la imaginea unei generații tinere
+                care crește frumos prin sport.
+              </p>
+              <p>
+                Prezența sa în cadrul grupului de sportivi ai clubului reflectă muncă,
+                ambiție și dorință de afirmare în box.
+              </p>
             </div>
 
             <div class="athlete-visual mini-gallery">
-              <div class="photo-box"><img src="images/cretu-cezar-1.jpeg" alt="Crețu Cezar - imagine 1" /></div>
-              <div class="photo-box"><img src="images/cretu-cezar-2.jpeg" alt="Crețu Cezar - imagine 2" /></div>
-              <div class="photo-box"><img src="images/cretu-cezar-3.jpeg" alt="Crețu Cezar - imagine 3" /></div>
-              <div class="photo-box"><img src="images/cretu-rares-marcu.jpeg" alt="Crețu Cezar, Rareș Tanasă și Marcu Andrei" /></div>
+              <div class="photo-box">
+                <img src="images/cretu-cezar-1.jpeg" alt="Crețu Cezar - imagine 1" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-cezar-2.jpeg" alt="Crețu Cezar - imagine 2" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-cezar-3.jpeg" alt="Crețu Cezar - imagine 3" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-rares-marcu.jpeg" alt="Crețu Cezar, Rareș Tanasă și Marcu Andrei" width="1200" height="900" />
+              </div>
             </div>
           </div>
         </div>
@@ -680,13 +783,24 @@
           <div class="athlete-layout">
             <div class="athlete-text card">
               <h3>Dănilă Ștefan</h3>
-              <p>Component al <strong>Lotului Național</strong>, pregătit în cadrul <strong>Centrului Olimpic Brăila</strong>, Dănilă Ștefan reprezintă un exemplu de muncă, ambiție și evoluție.</p>
-              <p>Parcursul său confirmă valoarea sportivă și nivelul ridicat de pregătire, fiind un nume important în imaginea și prestigiul clubului CSM Box Dorohoi.</p>
+              <p>
+                Component al <strong>Lotului Național</strong>, pregătit în cadrul
+                <strong>Centrului Olimpic Brăila</strong>, Dănilă Ștefan reprezintă un exemplu
+                de muncă, ambiție și evoluție.
+              </p>
+              <p>
+                Parcursul său confirmă valoarea sportivă și nivelul ridicat de pregătire, fiind
+                un nume important în imaginea și prestigiul clubului CSM Box Dorohoi.
+              </p>
             </div>
 
             <div class="athlete-visual mini-gallery">
-              <div class="photo-box"><img src="images/danila-stefan-1.jpeg" alt="Dănilă Ștefan - imagine de prezentare" /></div>
-              <div class="photo-box"><img src="images/danila-stefan-cu-antrenorul.jpeg" alt="Dănilă Ștefan și antrenorul Topală Valerian" /></div>
+              <div class="photo-box">
+                <img src="images/danila-stefan-1.jpeg" alt="Dănilă Ștefan - imagine de prezentare" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/danila-stefan-cu-antrenorul.jpeg" alt="Dănilă Ștefan și antrenorul Topală Valerian" width="1200" height="900" />
+              </div>
             </div>
           </div>
         </div>
@@ -695,19 +809,26 @@
           <div class="athlete-layout reverse">
             <div class="athlete-text card">
               <h3>David Gramescu</h3>
-              <p>Mezinul nostru, David Gramescu este cel mai mic din sală, dar vine cu energie, ambiție și dorință de afirmare. Reprezintă foarte bine noua generație a CSM Box Dorohoi.</p>
-              <p>Prin seriozitate și implicare, David arată că pasiunea pentru box se construiește de la vârste mici, cu muncă, răbdare și încredere.</p>
+              <p>
+                Mezinul nostru, David Gramescu este cel mai mic din sală, dar vine cu energie,
+                ambiție și dorință de afirmare. Reprezintă foarte bine noua generație a
+                CSM Box Dorohoi.
+              </p>
+              <p>
+                Prin seriozitate și implicare, David arată că pasiunea pentru box se construiește
+                de la vârste mici, cu muncă, răbdare și încredere.
+              </p>
             </div>
 
             <div class="athlete-visual mini-gallery">
               <div class="photo-box">
-                <img src="images/david-gramescu-1.jpeg" alt="David Gramescu - imagine 1" style="object-position:center 8%;" />
+                <img src="images/david-gramescu-1.jpeg" alt="David Gramescu - imagine 1" width="900" height="1200" style="object-position:center 8%;" />
               </div>
               <div class="photo-box">
-                <img src="images/david-gramescu-2.png" alt="David Gramescu - imagine 2" style="object-position:center 12%;" />
+                <img src="images/david-gramescu-2.jpeg" alt="David Gramescu - imagine 2" width="900" height="1200" style="object-position:center 12%;" />
               </div>
               <div class="photo-box">
-                <img src="images/david-si-alessio-gramescu.jpeg" alt="David și Alessio Grămescu" style="object-position:center 15%;" />
+                <img src="images/david-si-alessio-gramescu.jpeg" alt="David și Alessio Grămescu" width="1200" height="900" style="object-position:center 15%;" />
               </div>
             </div>
           </div>
@@ -717,16 +838,23 @@
           <div class="athlete-layout">
             <div class="athlete-text card">
               <h3>Marcu Andrei</h3>
-              <p>Sportiv al clubului CSM Box Dorohoi, prezent constant în activitatea de pregătire și competiții. Prin seriozitate și implicare, face parte din nucleul tânăr și promițător al clubului.</p>
-              <p>Evoluția sa reflectă munca depusă zi de zi și dorința de a progresa într-un mediu bazat pe respect, disciplină și performanță.</p>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, prezent constant în activitatea de pregătire
+                și competiții. Prin seriozitate și implicare, face parte din nucleul tânăr și
+                promițător al clubului.
+              </p>
+              <p>
+                Evoluția sa reflectă munca depusă zi de zi și dorința de a progresa într-un mediu
+                bazat pe respect, disciplină și performanță.
+              </p>
             </div>
 
             <div class="athlete-visual mini-gallery">
               <div class="photo-box">
-                <img src="images/marcu-andrei-1.png" alt="Marcu Andrei - imagine de prezentare" style="object-position:center 10%;" />
+                <img src="images/marcu-andrei-1.jpeg" alt="Marcu Andrei - imagine de prezentare" width="900" height="1200" style="object-position:center 10%;" />
               </div>
               <div class="photo-box">
-                <img src="images/cretu-rares-marcu.jpeg" alt="Marcu Andrei alături de colegii din club" style="object-position:right 18%;" />
+                <img src="images/cretu-rares-marcu.jpeg" alt="Marcu Andrei alături de colegii din club" width="1200" height="900" style="object-position:right 18%;" />
               </div>
             </div>
           </div>
@@ -736,13 +864,24 @@
           <div class="athlete-layout reverse">
             <div class="athlete-text card">
               <h3>Rareș Tanasă</h3>
-              <p>Sportiv al clubului CSM Box Dorohoi, evidențiat prin disciplină, atitudine bună și dorință de progres. Este parte dintr-un grup de tineri sportivi care duc mai departe imaginea clubului.</p>
-              <p>Prin muncă și perseverență, Rareș contribuie la atmosfera competitivă și serioasă din sală, alături de colegii săi.</p>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, evidențiat prin disciplină, atitudine bună
+                și dorință de progres. Este parte dintr-un grup de tineri sportivi care duc mai
+                departe imaginea clubului.
+              </p>
+              <p>
+                Prin muncă și perseverență, Rareș contribuie la atmosfera competitivă și serioasă
+                din sală, alături de colegii săi.
+              </p>
             </div>
 
             <div class="athlete-visual mini-gallery">
-              <div class="photo-box"><img src="images/rares-tanasa-1.jpeg" alt="Rareș Tanasă - imagine de prezentare" /></div>
-              <div class="photo-box"><img src="images/cretu-rares-marcu.jpeg" alt="Rareș Tanasă alături de colegii din club" style="object-position:center 18%;" /></div>
+              <div class="photo-box">
+                <img src="images/rares-tanasa-1.jpeg" alt="Rareș Tanasă - imagine de prezentare" width="900" height="1200" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-rares-marcu.jpeg" alt="Rareș Tanasă alături de colegii din club" width="1200" height="900" style="object-position:center 18%;" />
+              </div>
             </div>
           </div>
         </div>
@@ -754,16 +893,31 @@
         <div class="section-head">
           <div class="eyebrow">Galerie foto</div>
           <h2>Imagini din activitatea clubului</h2>
-          <p>O selecție de imagini de grup, momente din competiții și cadre din activitatea sportivilor CSM Box Dorohoi.</p>
+          <p>
+            O selecție de imagini de grup, momente din competiții și cadre din activitatea
+            sportivilor CSM Box Dorohoi.
+          </p>
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-item"><img src="images/galerie-1.jpeg" alt="Galerie CSM Box Dorohoi 1" /></div>
-          <div class="gallery-item"><img src="images/galerie-2.jpeg" alt="Galerie CSM Box Dorohoi 2" /></div>
-          <div class="gallery-item"><img src="images/galerie-3.jpeg" alt="Galerie CSM Box Dorohoi 3" /></div>
-          <div class="gallery-item"><img src="images/galerie-4.jpeg" alt="Galerie CSM Box Dorohoi 4" /></div>
-          <div class="gallery-item"><img src="images/sportivii-elita-1.jpeg" alt="Sportivii de elită" /></div>
-          <div class="gallery-item"><img src="images/sportivii-elita-2.jpeg" alt="Sportivii de elită 2" /></div>
+          <div class="gallery-item">
+            <img src="images/galerie-1.jpeg" alt="Galerie CSM Box Dorohoi 1" width="1200" height="900" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-2.jpeg" alt="Galerie CSM Box Dorohoi 2" width="1200" height="900" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-3.jpeg" alt="Galerie CSM Box Dorohoi 3" width="1200" height="900" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-4.jpeg" alt="Galerie CSM Box Dorohoi 4" width="1200" height="900" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/sportivii-elita-1.jpeg" alt="Sportivii de elită" width="1200" height="900" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/sportivii-elita-2.jpeg" alt="Sportivii de elită 2" width="1600" height="1000" />
+          </div>
         </div>
       </div>
     </section>
