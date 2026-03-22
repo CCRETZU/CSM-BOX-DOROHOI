@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSM Box Dorohoi</title>
+  <meta
+    name="description"
+    content="CSM Box Dorohoi recrutează începători. Club de box din Dorohoi, cu antrenamente serioase, disciplină, performanță și sportivi de perspectivă."
+  />
+  <style>
+    :root{
+      --bg:#0b0f16;
+      --card:#171e2e;
+      --text:#f5f7fb;
+      --muted:#bcc5d6;
+      --accent:#d90429;
+      --accent-2:#ffb703;
+      --line:rgba(255,255,255,.08);
+      --radius:24px;
+      --shadow:0 14px 34px rgba(0,0,0,.35);
+      --max:1240px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      line-height:1.6;
+      background:
+        radial-gradient(circle at top right, rgba(217,4,41,.18), transparent 30%),
+        radial-gradient(circle at left, rgba(255,183,3,.09), transparent 25%),
+        var(--bg);
+      cursor:url('https://pngimg.com/uploads/boxing_gloves/boxing_gloves_PNG102637.png') 32 32, auto;
+    }
+
+    a, button, .btn, .nav-links a, .quick-link, .gallery-item img, .mini-gallery img{
+      cursor:url('https://pngimg.com/uploads/boxing_gloves/boxing_gloves_PNG102637.png') 32 32, pointer;
+    }
+
+    @media (max-width: 768px){
+      body, a, button, .btn, .nav-links a, .quick-link, .gallery-item img, .mini-gallery img{
+        cursor:auto;
+      }
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(11,15,22,.86);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:1.35rem;
+      font-weight:800;
+      letter-spacing:.4px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:var(--accent);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      font-size:.95rem;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), #ff4f68);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border-color:rgba(255,255,255,.14);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.05);
+    }
+
+    .hero{
+      padding:90px 0 72px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      color:var(--accent-2);
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    h1{
+      font-size:clamp(2.3rem, 5vw, 4.8rem);
+      line-height:1.04;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:1.08rem;
+      margin-bottom:28px;
+      max-width:62ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .hero-points span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      color:#d7dff1;
+      font-size:.94rem;
+    }
+
+    .hero-photo,
+    .photo-box,
+    .gallery-item{
+      overflow:hidden;
+      border-radius:28px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#0f1420;
+    }
+
+    .hero-photo img,
+    .photo-box img{
+      width:100%;
+      height:100%;
+      min-height:460px;
+      object-fit:cover;
+    }
+
+    section{
+      padding:72px 0;
+    }
+
+    .section-head{
+      margin-bottom:28px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      color:var(--accent-2);
+      font-size:.86rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.8rem, 3vw, 2.9rem);
+      margin-bottom:10px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:75ch;
+    }
+
+    .about-grid,
+    .coach-grid,
+    .athlete-layout{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card p + p{
+      margin-top:14px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:20px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.4rem;
+      color:var(--accent-2);
+      margin-bottom:4px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature h3{
+      margin-bottom:10px;
+      font-size:1.05rem;
+    }
+
+    .feature p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .coach-details h3,
+    .athlete-text h3{
+      font-size:1.8rem;
+      margin-bottom:12px;
+    }
+
+    .coach-details p,
+    .athlete-text p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    .coach-contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .phone-box{
+      display:inline-flex;
+      align-items:center;
+      padding:14px 18px;
+      border-radius:14px;
+      background:rgba(217,4,41,.12);
+      border:1px solid rgba(217,4,41,.35);
+      font-weight:700;
+    }
+
+    .quick-links{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .quick-link{
+      display:block;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+      text-align:center;
+    }
+
+    .quick-link:hover{
+      transform:translateY(-4px);
+      border-color:rgba(255,183,3,.35);
+    }
+
+    .quick-link strong{
+      display:block;
+      font-size:1.02rem;
+      margin-bottom:6px;
+    }
+
+    .quick-link span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .athlete-section{
+      padding-top:34px;
+      border-top:1px solid rgba(255,255,255,.06);
+      margin-top:34px;
+    }
+
+    .athlete-layout.reverse .athlete-text{
+      order:2;
+    }
+
+    .athlete-layout.reverse .athlete-visual{
+      order:1;
+    }
+
+    .mini-gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .mini-gallery .photo-box img{
+      min-height:230px;
+    }
+
+    .highlight{
+      margin-top:14px;
+      padding:14px 16px;
+      border-left:4px solid var(--accent-2);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      color:#eef2fb;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg, rgba(217,4,41,.16), rgba(255,183,3,.10));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:40px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box h2{
+      font-size:clamp(1.9rem, 4vw, 3rem);
+      margin-bottom:14px;
+    }
+
+    .cta-box p{
+      color:var(--muted);
+      max-width:62ch;
+      margin:0 auto 24px;
+    }
+
+    footer{
+      padding:28px 0 40px;
+      border-top:1px solid var(--line);
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,
+      .about-grid,
+      .coach-grid,
+      .athlete-layout,
+      .features{
+        grid-template-columns:1fr;
+      }
+
+      .quick-links{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .athlete-layout.reverse .athlete-text,
+      .athlete-layout.reverse .athlete-visual{
+        order:initial;
+      }
+    }
+
+    @media (max-width:760px){
+      .nav{
+        flex-direction:column;
+        justify-content:center;
+        padding:14px 0;
+      }
+
+      .nav-links{
+        justify-content:center;
+      }
+
+      .hero{
+        padding-top:60px;
+      }
+
+      .quick-links,
+      .gallery-grid,
+      .mini-gallery,
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .hero-photo img,
+      .photo-box img{
+        min-height:300px;
+      }
+
+      .gallery-item img{
+        height:240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#acasa" class="logo">CSM <span>Box</span> Dorohoi</a>
+      <nav class="nav-links">
+        <a href="#despre">Despre</a>
+        <a href="#antrenor">Antrenor</a>
+        <a href="#sportivi">Sportivi</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact" class="btn btn-primary">Înscrie-te</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="acasa">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">CSM Box Dorohoi recrutează începători</div>
+          <h1>Curaj, disciplină și performanță în fiecare antrenament</h1>
+          <p>
+            La <strong>CSM Box Dorohoi</strong> îi așteptăm pe cei care vor să înceapă boxul
+            într-un mediu serios, motivant și bine organizat. Aici se formează sportivi,
+            dar și caractere puternice, bazate pe muncă, respect și ambiție.
+          </p>
+
+          <div class="hero-actions">
+            <a href="tel:0787537420" class="btn btn-primary">Sună acum: 0787537420</a>
+            <a href="#sportivi" class="btn btn-secondary">Vezi sportivii</a>
+          </div>
+
+          <div class="hero-points">
+            <span>Începători bineveniți</span>
+            <span>Disciplină și respect</span>
+            <span>Pregătire constantă</span>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="images/sportivii-elita-2.jpeg" alt="Sportivii clubului CSM Box Dorohoi" />
+        </div>
+      </div>
+    </section>
+
+    <section id="despre">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Despre club</div>
+          <h2>Un loc în care crești prin sport</h2>
+          <p>
+            CSM Box Dorohoi oferă un cadru serios pentru pregătire, dezvoltare fizică și formare
+            mentală. Prin participări constante și rezultate obținute în competiții, clubul
+            demonstrează că performanța se construiește prin seriozitate, muncă și pasiune pentru box.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              La club, începătorii sunt ghidați pas cu pas pentru a învăța corect bazele boxului,
+              într-un mediu motivant și disciplinat. Fiecare antrenament contribuie la dezvoltarea
+              condiției fizice, a încrederii și a spiritului de luptă.
+            </p>
+            <p>
+              Sportivii CSM Box Dorohoi au obținut rezultate frumoase la diverse competiții,
+              confirmând prin muncă, disciplină și ambiție nivelul bun de pregătire al clubului.
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>Box</strong>
+                <span>serios și disciplinat</span>
+              </div>
+              <div class="stat">
+                <strong>Lot</strong>
+                <span>sportivi de perspectivă</span>
+              </div>
+              <div class="stat">
+                <strong>Rezultate</strong>
+                <span>la competiții</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="photo-box">
+            <img src="images/cretu-rares-marcu.jpeg" alt="Sportivi CSM Box Dorohoi" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Avantaje</div>
+          <h2>Ce câștigi când te alături clubului</h2>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Condiție fizică</h3>
+            <p>Îți dezvolți forța, rezistența, viteza și mobilitatea prin antrenamente complete.</p>
+          </div>
+          <div class="feature">
+            <h3>Disciplină</h3>
+            <p>Înveți să fii constant, organizat și să îți depășești limitele cu seriozitate.</p>
+          </div>
+          <div class="feature">
+            <h3>Încredere</h3>
+            <p>Boxul te ajută să devii mai sigur pe tine și mai puternic mental.</p>
+          </div>
+          <div class="feature">
+            <h3>Spirit de echipă</h3>
+            <p>Te antrenezi alături de oameni motivați, într-un colectiv bazat pe respect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="antrenor">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Antrenor</div>
+          <h2>Îndrumare serioasă și experiență</h2>
+        </div>
+
+        <div class="coach-grid">
+          <div class="photo-box">
+            <img src="images/antrenor-topala-valerian.jpeg" alt="Antrenor Topală Valerian" />
+          </div>
+
+          <div class="card coach-details">
+            <h3>Topală Valerian</h3>
+            <p>
+              Antrenorul clubului CSM Box Dorohoi, dedicat formării și dezvoltării sportivilor
+              într-un cadru bazat pe disciplină, seriozitate și performanță.
+            </p>
+            <p>
+              Prin muncă susținută și implicare constantă, contribuie la creșterea unei echipe
+              unite, ambițioase și orientate spre progres, atât pentru începători, cât și pentru
+              sportivii care urmăresc performanța.
+            </p>
+
+            <div class="coach-contact">
+              <a href="tel:0787537420" class="phone-box">Telefon: 0787537420</a>
+              <a href="tel:0787537420" class="btn btn-primary">Contactează antrenorul</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sportivi">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Sportivii clubului</div>
+          <h2>Prezentare individuală pentru fiecare sportiv</h2>
+          <p>
+            Fiecare sportiv are propria secțiune, iar aici apar toate imaginile dedicate lui.
+          </p>
+        </div>
+
+        <div class="quick-links">
+          <a class="quick-link" href="#alessio">
+            <strong>Alessio Grămescu</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+          <a class="quick-link" href="#cretu">
+            <strong>Crețu Cezar</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+          <a class="quick-link" href="#danila">
+            <strong>Dănilă Ștefan</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+          <a class="quick-link" href="#david">
+            <strong>David Gramescu</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+          <a class="quick-link" href="#marcu">
+            <strong>Marcu Andrei</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+          <a class="quick-link" href="#rares">
+            <strong>Rareș Tanasă</strong>
+            <span>Vezi secțiunea</span>
+          </a>
+        </div>
+
+        <div class="athlete-section" id="alessio">
+          <div class="athlete-layout">
+            <div class="athlete-text card">
+              <h3>Alessio Grămescu</h3>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, remarcat prin determinare, curaj și dorință
+                de progres. Prezența sa în competiții și momentele spectaculoase din ring reflectă
+                munca depusă la antrenamente și spiritul de luptător.
+              </p>
+              <p>
+                Alessio reprezintă foarte bine energia și ambiția noii generații de sportivi ai
+                clubului, fiind un exemplu de implicare și evoluție constantă.
+              </p>
+              <div class="highlight">
+                Moment de competiție: în această secțiune este inclusă și imaginea cu faza
+                spectaculoasă din ring, cea cu „Alessio Grămescu l-a doborât pe Moldoveanu Ciprian
+                cu acest upercut”.
+              </div>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-albastru.jpeg" alt="Alessio Grămescu - competiție" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-2.jpeg" alt="Alessio Grămescu - portret în sală" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-uppercut.jpeg" alt="Alessio Grămescu - moment spectaculos în ring" />
+              </div>
+              <div class="photo-box">
+                <img src="images/alessio-gramescu-portret.jpeg" alt="Alessio Grămescu - imagine de prezentare" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="athlete-section" id="cretu">
+          <div class="athlete-layout reverse">
+            <div class="athlete-text card">
+              <h3>Crețu Cezar</h3>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, implicat activ în pregătire și competiții.
+                Prin seriozitate și perseverență, contribuie la imaginea unei generații tinere
+                care crește frumos prin sport.
+              </p>
+              <p>
+                Prezența sa în cadrul grupului de sportivi ai clubului reflectă muncă,
+                ambiție și dorință de afirmare în box.
+              </p>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/cretu-cezar-1.jpeg" alt="Crețu Cezar - imagine 1" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-cezar-2.jpeg" alt="Crețu Cezar - imagine 2" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-cezar-3.jpeg" alt="Crețu Cezar - imagine 3" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-rares-marcu.jpeg" alt="Crețu Cezar, Rareș Tanasă și Marcu Andrei" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="athlete-section" id="danila">
+          <div class="athlete-layout">
+            <div class="athlete-text card">
+              <h3>Dănilă Ștefan</h3>
+              <p>
+                Component al <strong>Lotului Național</strong>, pregătit în cadrul
+                <strong>Centrului Olimpic Brăila</strong>, Dănilă Ștefan reprezintă un exemplu
+                de muncă, ambiție și evoluție.
+              </p>
+              <p>
+                Parcursul său confirmă valoarea sportivă și nivelul ridicat de pregătire, fiind
+                un nume important în imaginea și prestigiul clubului CSM Box Dorohoi.
+              </p>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/danila-stefan-1.jpeg" alt="Dănilă Ștefan - imagine de prezentare" />
+              </div>
+              <div class="photo-box">
+                <img src="images/danila-stefan-cu-antrenorul.jpeg" alt="Dănilă Ștefan și antrenorul Topală Valerian" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="athlete-section" id="david">
+          <div class="athlete-layout reverse">
+            <div class="athlete-text card">
+              <h3>David Gramescu</h3>
+              <p>
+                Mezinul nostru, David Gramescu este cel mai mic din sală, dar vine cu energie,
+                ambiție și dorință de afirmare. Reprezintă foarte bine noua generație a
+                CSM Box Dorohoi.
+              </p>
+              <p>
+                Prin seriozitate și implicare, David arată că pasiunea pentru box se construiește
+                de la vârste mici, cu muncă, răbdare și încredere.
+              </p>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/david-gramescu-1.jpeg" alt="David Gramescu - imagine 1" />
+              </div>
+              <div class="photo-box">
+                <img src="images/david-gramescu-2.jpeg" alt="David Gramescu - imagine 2" />
+              </div>
+              <div class="photo-box">
+                <img src="images/david-si-alessio-gramescu.jpeg" alt="David și Alessio Grămescu" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="athlete-section" id="marcu">
+          <div class="athlete-layout">
+            <div class="athlete-text card">
+              <h3>Marcu Andrei</h3>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, prezent constant în activitatea de pregătire
+                și competiții. Prin seriozitate și implicare, face parte din nucleul tânăr și
+                promițător al clubului.
+              </p>
+              <p>
+                Evoluția sa reflectă munca depusă zi de zi și dorința de a progresa într-un mediu
+                bazat pe respect, disciplină și performanță.
+              </p>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/marcu-andrei-1.jpeg" alt="Marcu Andrei - imagine de prezentare" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-rares-marcu.jpeg" alt="Marcu Andrei alături de colegii din club" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="athlete-section" id="rares">
+          <div class="athlete-layout reverse">
+            <div class="athlete-text card">
+              <h3>Rareș Tanasă</h3>
+              <p>
+                Sportiv al clubului CSM Box Dorohoi, evidențiat prin disciplină, atitudine bună
+                și dorință de progres. Este parte dintr-un grup de tineri sportivi care duc mai
+                departe imaginea clubului.
+              </p>
+              <p>
+                Prin muncă și perseverență, Rareș contribuie la atmosfera competitivă și serioasă
+                din sală, alături de colegii săi.
+              </p>
+            </div>
+
+            <div class="athlete-visual mini-gallery">
+              <div class="photo-box">
+                <img src="images/rares-tanasa-1.jpeg" alt="Rareș Tanasă - imagine de prezentare" />
+              </div>
+              <div class="photo-box">
+                <img src="images/cretu-rares-marcu.jpeg" alt="Rareș Tanasă alături de colegii din club" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Galerie foto</div>
+          <h2>Imagini din activitatea clubului</h2>
+          <p>
+            O selecție de imagini de grup, momente din competiții și cadre din activitatea
+            sportivilor CSM Box Dorohoi.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/galerie-1.jpeg" alt="Galerie CSM Box Dorohoi 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-2.jpeg" alt="Galerie CSM Box Dorohoi 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-3.jpeg" alt="Galerie CSM Box Dorohoi 3" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/galerie-4.jpeg" alt="Galerie CSM Box Dorohoi 4" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/sportivii-elita-1.jpeg" alt="Sportivii de elită" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/sportivii-elita-2.jpeg" alt="Sportivii de elită 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Vrei să te alături clubului?</h2>
+          <p>
+            Dacă ești începător și vrei să înveți box într-un mediu serios, disciplinat și motivant,
+            contactează antrenorul clubului CSM Box Dorohoi și vino să faci parte din echipa noastră.
+          </p>
+          <a href="tel:0787537420" class="btn btn-primary">Sună la 0787537420</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      CSM Box Dorohoi • Antrenor: Topală Valerian • Telefon: 0787537420
+    </div>
+  </footer>
+</body>
+</html>
