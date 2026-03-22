@@ -211,6 +211,9 @@
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       background:#0f1420;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .hero-photo{
@@ -225,8 +228,8 @@
     .photo-box img{
       width:100%;
       height:100%;
-      object-fit:cover;
-      object-position:center 20%;
+      object-fit:contain;
+      object-position:center;
     }
 
     section{
@@ -419,8 +422,8 @@
     .mini-gallery .photo-box img{
       width:100%;
       height:100%;
-      object-fit:cover;
-      object-position:center 20%;
+      object-fit:contain;
+      object-position:center;
     }
 
     .highlight{
@@ -445,13 +448,13 @@
     .gallery-item img{
       width:100%;
       height:100%;
-      object-fit:cover;
-      object-position:center 20%;
+      object-fit:contain;
+      object-position:center;
       transition:transform .35s ease;
     }
 
     .gallery-item:hover img{
-      transform:scale(1.04);
+      transform:scale(1.02);
     }
 
     .cta-box{
@@ -822,13 +825,13 @@
 
             <div class="athlete-visual mini-gallery">
               <div class="photo-box">
-                <img src="images/david-gramescu-1.jpeg" alt="David Gramescu - imagine 1" width="900" height="1200" style="object-position:center 8%;" />
+                <img src="images/david-gramescu-1.jpeg" alt="David Gramescu - imagine 1" width="900" height="1200" />
               </div>
               <div class="photo-box">
-                <img src="images/david-gramescu-2.jpeg" alt="David Gramescu - imagine 2" width="900" height="1200" style="object-position:center 12%;" />
+                <img src="images/david-gramescu-2.jpeg" alt="David Gramescu - imagine 2" width="900" height="1200" />
               </div>
               <div class="photo-box">
-                <img src="images/david-si-alessio-gramescu.jpeg" alt="David și Alessio Grămescu" width="1200" height="900" style="object-position:center 15%;" />
+                <img src="images/david-si-alessio-gramescu.jpeg" alt="David și Alessio Grămescu" width="1200" height="900" />
               </div>
             </div>
           </div>
@@ -851,10 +854,10 @@
 
             <div class="athlete-visual mini-gallery">
               <div class="photo-box">
-                <img src="images/marcu-andrei-1.jpeg" alt="Marcu Andrei - imagine de prezentare" width="900" height="1200" style="object-position:center 10%;" />
+                <img src="images/marcu-andrei-1.jpeg" alt="Marcu Andrei - imagine de prezentare" width="900" height="1200" />
               </div>
               <div class="photo-box">
-                <img src="images/cretu-rares-marcu.jpeg" alt="Marcu Andrei alături de colegii din club" width="1200" height="900" style="object-position:right 18%;" />
+                <img src="images/cretu-rares-marcu.jpeg" alt="Marcu Andrei alături de colegii din club" width="1200" height="900" />
               </div>
             </div>
           </div>
@@ -880,7 +883,7 @@
                 <img src="images/rares-tanasa-1.jpeg" alt="Rareș Tanasă - imagine de prezentare" width="900" height="1200" />
               </div>
               <div class="photo-box">
-                <img src="images/cretu-rares-marcu.jpeg" alt="Rareș Tanasă alături de colegii din club" width="1200" height="900" style="object-position:center 18%;" />
+                <img src="images/cretu-rares-marcu.jpeg" alt="Rareș Tanasă alături de colegii din club" width="1200" height="900" />
               </div>
             </div>
           </div>
